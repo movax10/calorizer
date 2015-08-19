@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-configuration SYSTEM "http://hibernate.sourceforge.net/hibernate-configuration-3.0.dtd">
+<hibernate-configuration>
+    <session-factory >
+  		<property name="hibernate.dialect">org.hibernate.dialect.MySQLDialect</property>
+  		<property name="hibernate.show.sql">false</property>
+  
+        <mapping class="io.github.movax10.calorizer.entities.Account"/>
+		<mapping class="io.github.movax10.calorizer.entities.AccountRole"/>
+		<mapping class="io.github.movax10.calorizer.entities.Role"/>
+		<mapping class="io.github.movax10.calorizer.entities.Product"/>
+    </session-factory>
+</hibernate-configuration>
