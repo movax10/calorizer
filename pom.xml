@@ -36,37 +36,140 @@
    </pluginRepositories>
 
    <properties>
-      <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-   </properties>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+		<org.springframework.version>4.1.7.RELEASE</org.springframework.version>
+		<spring.security.version>3.1.2.RELEASE</spring.security.version>
+	</properties>
 
-   <dependencies>
-      <dependency>
-         <groupId>org.springframework</groupId>
-         <artifactId>spring-webmvc</artifactId>
-         <version>4.1.7.RELEASE</version>
-      </dependency>
-      <dependency>
-         <groupId>org.hibernate</groupId>
-         <artifactId>hibernate-core</artifactId>
-         <version>4.3.10.Final</version>
-      </dependency>
-      <dependency>
-         <groupId>mysql</groupId>
-         <artifactId>mysql-connector-java</artifactId>
-         <version>5.1.36</version>
-      </dependency>
-      <dependency>
-         <groupId>jstl</groupId>
-         <artifactId>jstl</artifactId>
-         <version>1.2</version>
-      </dependency>
-      <dependency>
-         <groupId>junit</groupId>
-         <artifactId>junit</artifactId>
-         <version>3.8.1</version>
-         <scope>test</scope>
-      </dependency>
-   </dependencies>
+	<dependencies>
+		<!--===================================== -->
+		<!--=============SPRING================== -->
+		<!--===================================== -->
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-core</artifactId>
+			<version>${org.springframework.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-beans</artifactId>
+			<version>${org.springframework.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-context</artifactId>
+			<version>${org.springframework.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-context-support</artifactId>
+			<version>${org.springframework.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-orm</artifactId>
+			<version>3.1.2.RELEASE</version>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-web</artifactId>
+			<version>${org.springframework.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-webmvc</artifactId>
+			<version>${org.springframework.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework.security</groupId>
+			<artifactId>spring-security-web</artifactId>
+			<version>${spring.security.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework.security</groupId>
+			<artifactId>spring-security-config</artifactId>
+			<version>${spring.security.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework.security</groupId>
+			<artifactId>spring-security-taglibs</artifactId>
+			<version>${spring.security.version}</version>
+		</dependency>
+		
+		<!--===================================== -->
+		<!--=============HIBERNATE=============== -->
+		<!--===================================== -->
+		<dependency>
+			<groupId>org.hibernate</groupId>
+			<artifactId>hibernate-core</artifactId>
+			<version>4.3.10.Final</version>
+		</dependency>
+		<dependency>
+			<groupId>org.hibernate</groupId>
+			<artifactId>hibernate-entitymanager</artifactId>
+			<version>4.2.5.Final</version>
+		</dependency>
+		<!--===================================== -->
+		<!--=============MYSQL=================== -->
+		<!--===================================== -->
+		<dependency>
+			<groupId>mysql</groupId>
+			<artifactId>mysql-connector-java</artifactId>
+			<version>5.1.36</version>
+		</dependency>
+		<!--===================================== -->
+		<!--=============JUNIT=================== -->
+		<!--===================================== -->
+		<dependency>
+			<groupId>junit</groupId>
+			<artifactId>junit</artifactId>
+			<version>3.8.1</version>
+			<scope>test</scope>
+		</dependency>
+		<!--===================================== -->
+		<!--=============APACHE================== -->
+		<!--===================================== -->
+		<dependency>
+			<groupId>commons-lang</groupId>
+			<artifactId>commons-lang</artifactId>
+			<version>2.6</version>
+		</dependency>
+		<dependency>
+			<groupId>commons-io</groupId>
+			<artifactId>commons-io</artifactId>
+			<version>1.4</version>
+		</dependency>
+		<!--===================================== -->
+		<!--=============LOG4J=================== -->
+		<!--===================================== -->
+		<dependency>
+			<groupId>log4j</groupId>
+			<artifactId>log4j</artifactId>
+			<version>1.2.17</version>
+		</dependency>
+		<!--===================================== -->
+		<!--=============WEB===================== -->
+		<!--===================================== -->
+		<dependency>
+			<groupId>jstl</groupId>
+			<artifactId>jstl</artifactId>
+			<version>1.2</version>
+		</dependency>
+		<dependency>
+			<groupId>javax.servlet</groupId>
+			<artifactId>servlet-api</artifactId>
+			<version>2.5</version>
+			<scope>provided</scope>
+		</dependency>
+		<!--===================================== -->
+		<!--=============FB====================== -->
+		<!--===================================== -->
+			<dependency>
+            <groupId>com.restfb</groupId>
+            <artifactId>restfb</artifactId>
+            <version>1.6.12</version>
+        </dependency>
+	</dependencies>
 
    <build>
       <plugins>
