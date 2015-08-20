@@ -1,3 +1,14 @@
 language: java
-install: mvn clean install -Popenshift -Dmaven.compiler.target=1.7 -Dmaven.compiler.source=1.7 -DskipTests=true
+install: mvn clean install -Popenshift -Dmaven.compiler.target=1.7 -Dmaven.compiler.source=1.7
+  -DskipTests=true
 script: mvn test -Dmaven.compiler.target=1.7 -Dmaven.compiler.source=1.7
+deploy:
+  provider: openshift
+  user: calorizer.dev@gmail.com
+  password:
+    secure: j/8Omfi4WnGAqBr9vkjk9v4Nk0FcVw/TaCWz2aXYcsYWkyUM8DehG7i7zcKpiWCeLAQfY4AhnPdPByGmLtHKCt96ykSaWaPvDOs9zw+d9I+TlheaqZCRWrvouY2a6OASGnfXbRBj8kOWTKcjsmq0/ifZPGK+aZyne8hzBm8Xyy0NTXiCHgEIumD14Pq9oVN8CJaD9lJdwByUXdDTu2ZquO69wR/w7PPfOMMJvxslMDOn4z/Vsj7z4uNGqrbG1Dt6Gc7MUYwKDqx6u58e/Ab16X+kUxf9Z4GXzHp7YzKOb3+7/GfhNbW/kUE1f1GtmDJltZ+Rc/Go+LSubx99XLYz5YIZ5v65ip0IROCROR5Prcm1O7WUKkLKaYZxi7Qk1mRDIDrswMu+ColmBVSOk+soL51J+84QiEAN+UWo08I4U7laWIWUGW9L+IbxNEikpAEI+Up3bUmtoqs4pZnFu/AbD0ML6xbc/TqFjX7SQoN3iK0h0wj13Dl621cPRAPNm+LAjrKwxyAzdTKdLu3Fd8kLZvnUh7tOSpf2QL4G6Y8ac2rB+MquTJkmqK/1BOddar998s/VmskAlUvL0xul+o1lsLWpuMVrIXlhrZg03olfJ27n9suyk5Li+Okh0RhropC2ibwR6FBTmpsfSpT7cnSIFcrX3I+ST3+aM8albSvPnUs=
+  app: dev
+  domain: calorizer
+  on:
+    repo: movax10/calorizer
+    branch: develop
