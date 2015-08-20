@@ -7,6 +7,9 @@ addons:
     apt:
         packages:
             - sshpass
+    ssh_known_hosts:
+        - dev-calorizer.rhcloud.com
+        - 52.1.130.114
 env:
   global:
   - secure: MMHodniMdhinqUzFVXIaeLdQFOSDIdp2U0fikWmL6Dap7Zx3bJ7jB6z8lIETEvbjlRAPH0XNIGFjyWE+rfSZ1Q+P/1u1+wIGGs3IzfVfbsi/ECDvXnLWGYpEC8klYwHM/uC9PMLEdzw5kMpuIvpyAyoVOO5RPmQsyVAYSkH8+oZN+iBtSQKL1DBSacgyGFETgkA8zO8SK3qKq4ndGBqYxJejH1vX9QB2BMYSmYE1Qe/sXmxVby/vd0YCJQZkfNOWcy6/fcnywkqZLvSG6g3Iey3mKhYUUFh0JrLrTTdU8+JblL0IxEMehqGThJLkAu83JihFnRPEsPlkoJRNnLTpgs8xT3cITlMOhrF3skqmR7FYKyYNbcuozMwLddX7/VsC6fwxH5H1KtwqgQOPUEuFhpQwLWjxSadgZRXWspAopF2krKOrQD7U/1M0Fs+P4Gm29Bm/NXfBrua9+eTo6JiixrBxSL24GL5p/oF+6971qCiqNluCm6TPotNcEEDx6QnD2K4cCPSGZ0cFIX9Py+ByAxRztMEF75HyBYqlhEUT3nNmyTad8Bi8XVVJHM0OT80DmvL6/nI0iqi5V04vC8l2nmSBXKYEL4R0sAn6ORYs+aULOO6LKRmDRgN+FVv/FuiCMX4U1xZ8PPnjYWrngN7weYZYCc1hCwuVuA7xD7cXEjs=
@@ -16,4 +19,4 @@ env:
   - secure: kktaY8n2x7Wwse5I5ZVYymLCin0kMKNknwH61p6LgtwFPvxYeA680iryW6zOcM725FKUnsVagSs+NtGjprCxJecs1Hqxew5zoVsssrJr8IQ2LmMOYgEL2MYhf5PyFfpld0GeEW633jiejdp+LOJ+IxkGIj4imWn2NSf5GQOf0IzWN6y1c+J9vdh5AI5/clhcz+1flU/8aZhMySiRL4FBjZSZjGv+b181K65zPyIPfRYWGFktpP5+ttcbSHlMhTOiRE4F4xLqHbeMe6ek+QHTEwNzq4atHjQee92/O/oUYF7sfx6wVIomMfY1mcwAMHaiMwWdo4T3rSp61PiGmv39YRek0s8wqWTF0nLIott+XI3rb74K2FjUTYdYqobm4+YPUi9/9vI5uarFqUmJkawdc95JGxpOrxOBz1YOYSQEpyoBmgSqPtH/1mp5UEA81F5KVoqxtqtTvGURXyEfNMq+jMDDySD20QV0dR7GkOV+SrKePL7edrDesfQe/6gRWL63KjfmJIPRlJS9xPmCi4A8p0WHUpvsgQYCcsP0k68H2/naNamWNehG+XR8Nvw8Lb9VbhUVleRbv9kN/MBJEW03vBNsLZ7qknnWxkrnstEtjIw6VddmNMJWHiis0clX9B1Rapm2oPYihAw+Afmn8DloVNtUIIV9mnN+MOzySvoY6t4=
 after_success:
   - export SSHPASS=$DEPLOY_PASS
-  - sshpass -e scp /home/travis/build/movax10/calorizer/target/ROOT.war $DEPLOY_USER@$DEPLOY_HOST:$DEPLOY_PATH
+  - scp /home/travis/build/movax10/calorizer/target/ROOT.war $DEPLOY_USER@$DEPLOY_HOST:$DEPLOY_PATH
