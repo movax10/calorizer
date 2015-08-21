@@ -1,3 +1,25 @@
 language: java
-install: mvn clean install -Popenshift -Dmaven.compiler.target=1.7 -Dmaven.compiler.source=1.7 -DskipTests=true
+install: mvn clean install -Popenshift -Dmaven.compiler.target=1.7 -Dmaven.compiler.source=1.7
+  -DskipTests=true
 script: mvn test -Dmaven.compiler.target=1.7 -Dmaven.compiler.source=1.7
+addons:
+  apt:
+    packages:
+    - sshpass
+  ssh_known_hosts:
+  - dev-calorizer.rhcloud.com
+  - 52.1.130.114
+env:
+  global:
+  - secure: muPntTh3p0+vm6NbMmaPZLB977T62xh1pJprWwDlQSwJRMRxjPd+p5wB81U112ePvEvUJ1QL7KNvG0oWot5YMWGqLStAbFb2GTyCoWLdy/yrUWRhGP1a9nbNQVGqpIeD7olb1aOuc0hqGh0CpPjG8IdW964zUtPfA9wnlClIHw9U2U1fezhfvIDO7SkwJEwAPs6M6T6sNBTexmD8f+Bgve24CfECKGYFcXM8DRufos//QwkAG59DIL9LplTB+UNhgnDZYDjbrLxNmQAHoCTYMuyLvr4g9F3RuYJdjFjd1g9zzY710Kz++i7HfoK2iBBUGBauzgnEIzAqjnp7+TDwUaWtoPrDYp28fHlELZTSTIG+JjE5uhpstAmUJGvSEI9Z1gnweuMKBJXGzNcMp96QDvUA/hNdBVQsGuuxkq0qE9yhAO6Zka7ZHcIfEXq5nYiV/wyuAIXFrqTnWcjuva1luQuB1mAyU3Kld19QZFHqevwQHfxpjTScbZ8eyTX4Y5UMLDkYJhNG9iY0Tc1QSV5Q2q6dfKCuX2K6oqfWqeQFlKJSDFpzUg7WOzWw+JfJnd9Uzx4It6XvVmuX6pCaUzOxdjBcvPw4F+4BKJ22ZA9hmu3a3yAPBUaGLo0bnOGmHrSs+x3bNDTv7avsjzKufqEZqPEOA8ISW2J/F3bhTr0KKeE=
+  - secure: rfOxwhknD9w61tvvGN2vV/uMrSKA+fQ0lfhRhad2jRCfESctKh5s+c6rL+K+Fk+7NqKnSqfH8b7ZrQOaldFhk3gCxREDJUCV+sdAdhAQSmu7isOedFazZnpGGUy2TznOWHX7QQmuFRAkBwqgHtGdqENhGprZxB3mhhyoFOgGkYfvvKdIx3+p3Jnyca+uZVcV+AwFPGCHG2cRHiXL5fYt+DlQdWI8cad8IXSr6KNqeVTseAmXqSO6cW9TOERzSqydHMSop6j7QCw3mc8xyAHj71yjR0R1V0dSFjIKMCA6vVjCL9P6b3KygkU73kiUzVrGAqCf/LKCGOomwOaG3FdWS2yiKtOfTp+jj+s4qmgf3/ADKgYfiqbNm70CF6tcrNHHWOgQXsBo+hQlas4yQmizc8eIJ9+7K6WZr91jH+Pn0NWdTdNwZgR8gzJMF/xaiimOVCUjhdEuruhkbNd9sJF080Nk6SFy6pVza/nNBY9WkTBogjNdzYkVlOpSfAdCAOu8HujxviJmYqO2LCFLA0GTTVHKtZzFGJrdw8eo+cNDT/LEsDVEqHaWFsgoGZtJwRl+PA9Sy4gR/071buZhonvywN5TRY5RVfUZrX4Ns3gO7NB7g8NGq5AjxjjwirtUA9xr9cMtL/dQtCiUF06AFUKFIfqBzadTFeV31594fcZss9c=
+  - secure: iEZBMoh0zAIS6qbV9tHnkx3BukzUOYeFigR7bwb+0QAyg8Xo2IrLZ244L02cV7rKao+WaB7HaQhjaxQvCS04nuGi6XnMCgYQiLsK7mH8m/zOxGZnLk1U+df9y4XUqgbdhgn3UL/EcQL6nqYlw/7qIJMnnO4OVNdXErG5cwTKfoW3+PG2MKVke8zrSm9XnqyHLIjfDOg9qbnfzYDph/fXvpZ9xBkaT3hi3OB4x7BHGjbSWjzoahp9jVKfRPIUFnfgS5y5stpHXBB/b9SfpSSOwZzVGV3JSRV/6JFdatMnQXRNopcKUNd6KfN60ySM8wb3n+dHMLuaDMJDk14GChh5F0IYNp1VfsR+KUWhKtxUmblrRZODj6UxwrMvjU6pqQlMO32YKHNibs0smrhR4iKsoqdA0PFURpAkzaDdFooPyXOdE3elpzastRODUF9eftVKqJ/mi+ttWhdFn2VaF8VuWp9+hpoCSscCnOBkZEJeGcCaP1yE2Wj+ctJTR4/+96+IhXjpyRUnxXIkOsyLI8Gm8OPoRwAPMxXwystSkl7zJM8D+n8rOTsrEgDm23V4rrnYxILWE4kx/3g/K4a2rorcmzUEzvXJyNyx83X5GfGXuIN6XOwETE7oDCm9o8TZO/Tr7qPA8MFLQtfT5L/6hNdU7fgcsEAs67858QrFHYd7Xzk=
+after_success:
+- chmod 600 ~/.ssh/id_rsa
+- eval "$(ssh-agent)"
+- ssh-add
+- export SSHPASS=$DEPLOY_PASS
+- scp /home/travis/build/movax10/calorizer/target/ROOT.war $DEPLOY_USER@$DEPLOY_HOST:$DEPLOY_PATH
+before_install:
+- openssl aes-256-cbc -K $encrypted_e55d19ff8b00_key -iv $encrypted_e55d19ff8b00_iv
+  -in id_rsa.enc -out ~/.ssh/id_rsa -d
