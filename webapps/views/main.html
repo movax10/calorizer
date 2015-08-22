@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="ru" ng-app="calorizerApp">
+<head>
+	<meta charset="UTF-8">
+	<title>Calorizer</title>
+	<link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="bower_components/ngDialog/css/ngDialog.css">
+    <link rel="stylesheet" href="bower_components/ngDialog/css/ngDialog-custom-width.css">
+    <link rel="stylesheet" href="bower_components/ngDialog/css/ngDialog-theme-default.min.css">
+    <link rel="stylesheet" href="bower_components/ngDialog/css/ngDialog-theme-plain.min.css">
+
+
+</head>
+<body>
+    <!-- Static navbar -->
+	<nav class="navbar navbar-default navbar-static-top" ng-controller="MenuCtrl">
+        <div class="container-fluid">
+        	<div class="navbar-header">
+                <a class="navbar-brand" href="#">Calorizer</a>
+        	</div>
+        	
+          	<div id="navbar" class="navbar-collapse collapse">
+	            <ul class="nav navbar-nav navbar-right">
+	            	<li class="hide"><p class="navbar-text "> <span class="glyphicon glyphicon-user"></span>Logged in</p></li>
+		            <li><a href="#" ng-click="loginClick()">Log in</a></li>
+		            <li><a href="#">Sign up</a></li>
+		            <li class="hide"><a href="#">Sign out</a></li>
+	            </ul>
+            </div><!--/.nav-collapse -->
+        </div><!--/.container-fluid -->
+    </nav>
+
+    <!-- Main component for a primary marketing message or call to action -->
+    <div class="container">
+     	<div class="row">
+     		<div class="col-sm-6 col-sm-offset-3">
+     			<h4 class="text-center">Put your ingredients here</h4>
+     			<form action="">
+		        	<div class="form-group">
+					    <label class="center-block"></label>
+					    <textarea class="form-control" rows="15"></textarea>
+					    <br>
+					    <button type="button" class="btn btn-info btn-block">Calorize it</button>
+				  	</div>
+	    		</form>
+     		</div>
+     	</div>
+     	<div class="row">
+     		<div class="col-sm-8 col-sm-offset-2">
+     			<p class="text-center">Lorem ipsum dolor sit amet=</p>
+     		</div>
+     	</div>
+        <div class="row">
+            <div class="col-sm-8 col-sm-offset-2">
+                <p class="text-center">Lorem {{message}}</p>
+            </div>
+        </div>
+    </div>
+    <script type="text/ng-template" id="popupLogin.html">
+        <form>
+        <div class="form-group">
+        <label for="exampleInputEmail1">Email address</label>
+        <input type="email" class="form-control" id="exampleInputEmail1" placeholder="Email">
+        </div>
+        <div class="form-group">
+        <label for="exampleInputPassword1">Password</label>
+        <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
+        </div>
+        <button type="submit" class="btn btn-default">Submit</button>
+        <p>or</p>
+        <p><button type="submit" class="btn btn-default">Submit</button></p>
+        </form> 
+    </script>
+    <script src="bower_components/angular/angular.min.js"></script>
+    <script src="bower_components/ngDialog/js/ngDialog.min.js"></script> 
+    <script src="src/app.js"></script>
+
+<!--  -->
+</body>
+</html>
