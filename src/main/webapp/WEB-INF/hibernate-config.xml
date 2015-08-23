@@ -21,7 +21,7 @@
               <property name="mappingResources">
                      <list>
                             <value>hbm/Ingredient.hbm.xml</value>
-                            <value>hbm/User.hbm.xml</value>
+                            <value>hbm/Customer.hbm.xml</value>
                      </list>
               </property>
        </bean>

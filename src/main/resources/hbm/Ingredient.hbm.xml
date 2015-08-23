@@ -5,13 +5,13 @@
 
 <hibernate-mapping package="io.github.movax10.calorizer.model">
        <class name="Ingredient" table="ingredients">
-              <id name="id" column="id" type="java.lang.Integer">
+              <id name="id" column="id" type="integer">
                      <generator class="native"/>
               </id>
-              <property name="name" column="name" type="string" not-null="true" length="200"/>
-              <property name="calories" column="calories" type="float" not-null="true"/>
-              <property name="carbs" column="carbs" type="float" not-null="true"/>
-              <property name="fats" column="fats" type="float" not-null="true"/>
-              <property name="proteins" column="proteins" type="float" not-null="true"/>
+              <property name="name" column="name" type="string"/>
+              <property name="calories" column="calories" type="float"/>
+              <property name="carbs" column="carbs" type="float"/>
+              <property name="fats" column="fats" type="float"/>
+              <property name="proteins" column="proteins" type="float"/>
        </class>
 </hibernate-mapping>

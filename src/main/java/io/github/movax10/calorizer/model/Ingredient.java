@@ -1,14 +1,28 @@
 package io.github.movax10.calorizer.model;
 
+import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Size;
+
 /**
  * @author Roman Voloboev
  */
 public class Ingredient {
     private Integer id;
+
+    @NotNull(message = "Ingredient's name can't be null")
+    @Size(max = 200, message = "Incorrect ingredient's name size")
     private String name;
+
+    @NotNull(message = "Ingredient's calories can't be null")
     private Float calories;
+
+    @NotNull(message = "Ingredient's carbs can't be null")
     private Float carbs;
+
+    @NotNull(message = "Ingredient's fats can't be null")
     private Float fats;
+
+    @NotNull(message = "Ingredient's proteins can't be null")
     private Float proteins;
 
     public Ingredient() {
