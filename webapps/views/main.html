@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="ru" ng-app="CalorizerApp">
+<head>
+	<meta charset="UTF-8">
+	<title>Calorizer</title>
+	<link rel="stylesheet" href="css/bootstrap/bootstrap.min.css">
+    <link rel="stylesheet" href="css/ngDialog/css/ngDialog.css">
+    <link rel="stylesheet" href="css/ngDialog/css/ngDialog-custom-width.css">
+    <link rel="stylesheet" href="css/ngDialog/css/ngDialog-theme-default.min.css">
+    <link rel="stylesheet" href="css/ngDialog/css/ngDialog-theme-plain.min.css">
+
+
+</head>
+<body>
+    <!-- Static navbar -->
+	<nav class="navbar navbar-default navbar-static-top" ng-controller="MenuCtrl">
+        <div class="container-fluid">
+        	<div class="navbar-header">
+                <a class="navbar-brand" href="#">Calorizer</a>
+        	</div>
+        	
+          	<div id="navbar" class="navbar-collapse collapse">
+	            <ul class="nav navbar-nav navbar-right">
+	            	<li class="hide"><p class="navbar-text "> <span class="glyphicon glyphicon-user"></span>Logged in</p></li>
+		            <li><a href="#" ng-click="loginClick()">Log in</a></li>
+		            <li><a href="#">Sign up</a></li>
+		            <li class="hide"><a href="#">Sign out</a></li>
+	            </ul>
+            </div><!--/.nav-collapse -->
+        </div><!--/.container-fluid -->
+    </nav>
+
+    <!-- Main component for a primary marketing message or call to action -->
+    <div class="container">
+     	<div class="row">
+     		<div class="col-sm-6 col-sm-offset-3">
+     			<h4 class="text-center">Put your ingredients here</h4>
+     			<form action="">
+		        	<div class="form-group">
+					    <label class="center-block"></label>
+					    <textarea class="form-control" rows="15"></textarea>
+					    <br>
+					    <button type="button" class="btn btn-info btn-block">Calorize it</button>
+				  	</div>
+	    		</form>
+     		</div>
+     	</div>
+     	<div class="row">
+     		<div class="col-sm-8 col-sm-offset-2">
+     			<p class="text-center">Lorem ipsum dolor sit amet=</p>
+     		</div>
+     	</div>
+        <div class="row">
+            <div class="col-sm-8 col-sm-offset-2">
+                <p class="text-center">Lorem {{message}}</p>
+            </div>
+        </div>
+    </div>
+    <div>
+    <script type="text/ng-template" id="popupLogin.html">
+        <div ng-show="error" class="alert alert-danger">{{error}}</div>
+        <form name="form" ng-submit="login()" role="form">
+            <div class="form-group">
+                <label for="username">Username</label>
+                <i class="fa fa-key"></i>
+                <input type="text" name="username" id="username" class="form-control" ng-model="username" required />
+                // <span ng-show="form.username.$dirty && form.username.$error.required" class="help-block">Username is required</span>
+            </div>
+            <div class="form-group">
+                <label for="password">Password</label>
+                <i class="fa fa-lock"></i>
+                <input type="password" name="password" id="password" class="form-control" ng-model="password" required />
+                // <span ng-show="form.password.$dirty && form.password.$error.required" class="help-block">Password is required</span>
+            </div>
+            <div class="form-actions">
+                <button type="submit">Login</button>
+                <img ng-if="dataLoading" src="data:image/gif;base64,R0lGODlhEAAQAPIAAP///wAAAMLCwkJCQgAAAGJiYoKCgpKSkiH/C05FVFNDQVBFMi4wAwEAAAAh/hpDcmVhdGVkIHdpdGggYWpheGxvYWQuaW5mbwAh+QQJCgAAACwAAAAAEAAQAAADMwi63P4wyklrE2MIOggZnAdOmGYJRbExwroUmcG2LmDEwnHQLVsYOd2mBzkYDAdKa+dIAAAh+QQJCgAAACwAAAAAEAAQAAADNAi63P5OjCEgG4QMu7DmikRxQlFUYDEZIGBMRVsaqHwctXXf7WEYB4Ag1xjihkMZsiUkKhIAIfkECQoAAAAsAAAAABAAEAAAAzYIujIjK8pByJDMlFYvBoVjHA70GU7xSUJhmKtwHPAKzLO9HMaoKwJZ7Rf8AYPDDzKpZBqfvwQAIfkECQoAAAAsAAAAABAAEAAAAzMIumIlK8oyhpHsnFZfhYumCYUhDAQxRIdhHBGqRoKw0R8DYlJd8z0fMDgsGo/IpHI5TAAAIfkECQoAAAAsAAAAABAAEAAAAzIIunInK0rnZBTwGPNMgQwmdsNgXGJUlIWEuR5oWUIpz8pAEAMe6TwfwyYsGo/IpFKSAAAh+QQJCgAAACwAAAAAEAAQAAADMwi6IMKQORfjdOe82p4wGccc4CEuQradylesojEMBgsUc2G7sDX3lQGBMLAJibufbSlKAAAh+QQJCgAAACwAAAAAEAAQAAADMgi63P7wCRHZnFVdmgHu2nFwlWCI3WGc3TSWhUFGxTAUkGCbtgENBMJAEJsxgMLWzpEAACH5BAkKAAAALAAAAAAQABAAAAMyCLrc/jDKSatlQtScKdceCAjDII7HcQ4EMTCpyrCuUBjCYRgHVtqlAiB1YhiCnlsRkAAAOwAAAAAAAAAAAA=="/>
+                </div>
+        </form>
+    </script>
+    <script src="libs/angular.min.js"></script>
+    <script src="libs/ngDialog.min.js"></script>
+    <script src="libs/angular-cookies.min.js"></script>
+    <script src="src/app.js"></script>
+    <script src="src/services.js"></script> 
+    <script src="src/controllers.js"></script>
+    
+    
+
+
+
+<!--  -->
+</body>
+</html>
