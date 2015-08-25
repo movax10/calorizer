@@ -12,7 +12,7 @@ angular.module('CalorizerApp')
 	.controller('LoginController', ['$scope', '$rootScope', 'AuthenticationService',function($scope, $rootScope, AuthenticationService){
 		$scope.login = function() {
 			AuthenticationService.SetCredentials($scope.username, $scope.password);
-			alert('done');
+			$scope.closeThisDialog();
 		};
 		
 	}]);
